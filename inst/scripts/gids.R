@@ -4,7 +4,7 @@ library(rvest)
 data(gids)
 last.game <- sort(gids)[length(gids)]
 last.date <- as.Date(substr(last.game, 5, 14), format = "%Y_%m_%d")
-day_urls <- pitchRx:::makeUrls(last.date, last.date + 371, gids="")
+day_urls <- pitchRx:::makeUrls(last.date, last.date + 371 + 450, gids="")
 day_list <- lapply(day_urls, xml2::read_html)
 new_gids <- lapply(day_list, function(day) {
   day %>%
